@@ -1,0 +1,16 @@
+{
+  // Dewey semantic knowledge layer — provides dewey_semantic_search,
+  // dewey_search, dewey_traverse, dewey_get_page, dewey_find_by_tag,
+  // dewey_find_connections, dewey_query_properties, and dewey_similar.
+  //
+  // All review agents use Dewey for "Step 0: Prior Learnings" to find
+  // patterns from past reviews. If Dewey is not installed or not
+  // configured, agents skip this step gracefully.
+  //
+  // Install: brew install unbound-force/tap/dewey
+  "dewey": {
+    "type": "local",
+    "command": ["dewey", "serve", "--vault", "."],
+    "enabled": true
+  }
+}

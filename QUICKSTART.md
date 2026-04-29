@@ -87,16 +87,45 @@ git commit -m "chore: add Unbound Force framework"
 git push
 ```
 
-For code review only (no spec workflows), use the subset:
+For code review only (no spec workflows):
 
 ```bash
+# Via uf
 uf init --divisor
+
+# Via OpenPackage (no binary needed)
+opkg install @unbound-force/review-council
 ```
 
 ## For Contributors
 
-Set up your development environment in a project that
-uses Unbound Force:
+Two paths depending on your preference:
+
+### Option A: OpenPackage (no binary required)
+
+Install only the packages you need. Nothing is installed
+globally -- files go into your project directory only.
+
+```bash
+# Install OpenPackage (one-time)
+npm install -g opkg
+
+# Code review agents + convention packs
+opkg install @unbound-force/review-council
+
+# Spec workflows (also pulls review-council)
+opkg install @unbound-force/workflows
+```
+
+Works with any AI coding tool: OpenCode, Cursor, Claude
+Code, Gemini CLI, and 30+ others. Files auto-convert to
+your platform's format.
+
+### Option B: `uf` binary (full tool suite)
+
+Installs the `uf` binary and all companion tools.
+Provides additional infrastructure commands (doctor,
+gateway, sandbox) beyond what the packages include.
 
 ```bash
 uf setup        # installs recommended tools
@@ -108,9 +137,6 @@ Preview what `uf setup` will install before running:
 ```bash
 uf setup --dry-run
 ```
-
-Most tools are optional. The core experience (code review,
-spec workflows) requires only `uf` and `opencode`.
 
 ## Your First Review
 

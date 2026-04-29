@@ -175,6 +175,24 @@ custom files are never overwritten.
 | `/finale` | Commit, push, create PR, merge |
 | `/opsx-explore` | Think through ideas (read-only) |
 
+## OpenPackage Installation
+
+If you prefer not to install the `uf` binary, install
+the packages directly with [OpenPackage](https://openpackage.dev):
+
+```bash
+npm install -g opkg
+```
+
+| Package | What You Get | Install |
+|:---|:---|:---|
+| `@unbound-force/review-council` | 9 review agents, 2 commands, convention packs | `opkg install @unbound-force/review-council` |
+| `@unbound-force/workflows` | Speckit + OpenSpec commands, constitution check | `opkg install @unbound-force/workflows` |
+
+Workflows pulls review-council as a dependency. Files
+auto-convert to your platform (Cursor, Claude Code,
+Gemini CLI, OpenCode, and 30+ others).
+
 ## See Also
 
 - **Backlog management** -- `/muti-mind.init` to set up,
